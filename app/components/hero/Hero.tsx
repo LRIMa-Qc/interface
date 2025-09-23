@@ -4,12 +4,12 @@ import { RobotObj } from "./RobotObj";
 
 export function Hero() {
   return (
-    <div className="mt-16">
+    <div className="mt-16 w-screen">
       <div className="text-center">
         <h1 className="text-9xl font-bold text-center inline-block bg-gradient-to-br from-sky-500 to-pink-400 bg-clip-text text-transparent">
           BRING
         </h1>
-        <p className="text-lg font-medium">
+        <p className="text-lg font-medium px-5">
           Bot de Récupération Intelligent et de Navigation Guidé
         </p>
       </div>

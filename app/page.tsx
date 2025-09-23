@@ -3,7 +3,7 @@ import { Hero } from "./components/hero/Hero";
 
 export default function Home() {
   return (
-    <div className="bg-black h-screen text-white">
+    <div className="bg-black h-screen text-white max-w-screen overflow-hidden">
       <Header />
       <Hero />
     </div>
