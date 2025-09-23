@@ -4,7 +4,7 @@ export function Header() {
   return (
     <header className="p-5 flex justify-between items-center">
       <p className="font-extrabold text-2xl [txt-decoration:underline_overline] underline-offset-6 tracking-widest">
-        BRING
+        LRIMa
       </p>
       <ul className="flex gap-2 bg-white/10 border-white/20 border p-2 rounded-full">
         <NavElement href="/">Home</NavElement>
