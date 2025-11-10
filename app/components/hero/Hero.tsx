@@ -1,6 +1,7 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import { RobotObj } from "./RobotObj";
+import { OrbitControls } from "@react-three/drei";
 
 export function Hero() {
   return (
@@ -29,7 +30,7 @@ export function Hero() {
             decay={0}
             intensity={10 * Math.PI}
           />
-          <RobotObj position={[0, 0, 0]} />
+          <RobotObj />
         </Canvas>
       </div>
     </div>
