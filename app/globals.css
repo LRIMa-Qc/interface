@@ -1,1 +1,14 @@
 @import "tailwindcss";
+@tailwind components;
+
+@layer components {
+  .no-spinner {
+    appearance: textfield; /* For Firefox */
+    -moz-appearance: textfield; /* For older Firefox versions */
+  }
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* For Webkit browsers */
+    margin: 0;
+  }
+}

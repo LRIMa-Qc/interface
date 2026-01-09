@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { Header } from "./components/header/Header";
 import { Toaster } from "react-hot-toast";
+import { WebSocketComponent } from "./stores/WebSocket";
 
 const font = Font({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Toaster />
         <main className="bg-black h-screen text-white max-w-screen overflow-hidden">
           <Header />
+          <WebSocketComponent />
           {children}
         </main>
       </body>

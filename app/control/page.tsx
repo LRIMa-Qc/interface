@@ -2,60 +2,18 @@
 
 import toast from "react-hot-toast";
 import { doAction } from "@/app/actions/sdk";
-
-enum Action {
-  MOVE_FORWARD,
-  MOVE_BACKWARD,
-  STOP,
-}
+import { ChangeEvent } from "react";
+import { MotorSpeed } from "./components/MotorSpeed";
+import { Fieldset } from "./components/Fieldset";
+import { IMUActiviation } from "./components/IMUActivation";
+import { useMotor1Store, useMotor2Store } from "../stores/store";
 
 export default function Monitoring() {
-  const handleAction = async (action) => {
-    const response = await doAction(action);
-
-    if (response.success) {
-      toast.success(response.message);
-    } else {
-      toast.error(response.message);
-    }
-  };
   return (
-    <div>
-      <button
-        className="px-3 py-2 bg-gradient-to-br from-pink-500/50 to-sky-500/50 rounded-full ring-white ring ring-inset"
-        onClick={() => handleAction("backward")}
-        type="button"
-      >
-        Forward
-      </button>
-      <button
-        className="px-3 py-2 bg-gradient-to-br from-pink-500/50 to-sky-500/50 rounded-full ring-white ring ring-inset"
-        onClick={() => handleAction("forward")}
-        type="button"
-      >
-        Backward
-      </button>
-      <button
-        className="px-3 py-2 bg-gradient-to-br from-pink-500/50 to-sky-500/50 rounded-full ring-white ring ring-inset"
-        onClick={() => handleAction("left")}
-        type="button"
-      >
-        Left
-      </button>
-      <button
-        className="px-3 py-2 bg-gradient-to-br from-pink-500/50 to-sky-500/50 rounded-full ring-white ring ring-inset"
-        onClick={() => handleAction("right")}
-        type="button"
-      >
-        Right
-      </button>
-      <button
-        className="px-3 py-2 bg-gradient-to-br from-pink-500/50 to-sky-500/50 rounded-full ring-white ring ring-inset"
-        onClick={() => handleAction("stop")}
-        type="button"
-      >
-        Stop
-      </button>
+    <div className="grid grid-cols-3 gap-2">
+      <MotorSpeed motor="01" store={useMotor1Store} />
+      <MotorSpeed motor="02" store={useMotor2Store} />
+      <IMUActiviation />
     </div>
   );
 }

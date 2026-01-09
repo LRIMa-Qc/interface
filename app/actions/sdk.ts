@@ -26,6 +26,7 @@ export async function toggleLED() {
 }
 
 export async function doAction(action: string) {
+  console.log(action);
   const store = await cookies();
 
   const code = store.get("code");
@@ -35,7 +36,7 @@ export async function doAction(action: string) {
   }
 
   try {
-    client.publish("bring/action", action);
+    client.publish("device/write", action);
     return { success: true, message: "Sent" };
   } catch {
     return { success: false, message: "Uknown error" };

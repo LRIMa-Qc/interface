@@ -7,11 +7,10 @@ import type {
 import mqtt from "mqtt";
 
 const options = {
-  host: "0fa1404b7c15491b90830564ce2ee08e.s1.eu.hivemq.cloud",
-  port: 8883,
-  protocol: "mqtts",
-  username: "hivemq.webclient.1762814726293",
-  password: ":X7x@1C20*MBrO.fHmds",
+  host: "206.167.46.66",
+  port: 1883,
+  username: "dev",
+  password: "lrimalrima",
 } satisfies IClientOptions;
 
 export const client = mqtt.connect(options);
