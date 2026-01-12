@@ -28,7 +28,7 @@ export function WebSocketComponent() {
 
     ws.onopen = () => console.log("WS connected");
     ws.onclose = () => console.log("WS closed");
-    ws.onerror = (err) => console.error("WS error", err);
+    ws.onerror = (err) => console.log("WS error", err);
 
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data) as Data;

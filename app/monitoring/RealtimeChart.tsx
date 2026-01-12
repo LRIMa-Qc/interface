@@ -1,9 +1,13 @@
 "use client";
 
-import ApexCharts, { ApexOptions } from "apexcharts";
+import { ApexOptions } from "apexcharts";
 import { useEffect, useMemo } from "react";
-import ReactApexChart from "react-apexcharts";
 import { DataEntry } from "../stores/store";
+import dynamic from "next/dynamic";
+
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 interface RealTimeChartProps<T> {
   store: (selector: (state: T) => DataEntry[]) => DataEntry[];
@@ -57,7 +61,9 @@ export default function RealTimeChart<T>({
   }, [history, hasData]);
 
   useEffect(() => {
-    ApexCharts.exec(chartId, "updateSeries", [{ data: seriesData }]);
+    import("apexcharts").then((ApexCharts) => {
+      ApexCharts.default.exec(chartId, "updateSeries", [{ data: seriesData }]);
+    });
   }, [seriesData, chartId]);
 
   const options: ApexOptions = {
