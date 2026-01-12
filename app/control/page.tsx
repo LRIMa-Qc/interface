@@ -1,12 +1,10 @@
 "use client";
 
-import toast from "react-hot-toast";
-import { doAction } from "@/app/actions/sdk";
-import { ChangeEvent } from "react";
 import { MotorSpeed } from "./components/MotorSpeed";
-import { Fieldset } from "./components/Fieldset";
 import { IMUActiviation } from "./components/IMUActivation";
 import { useMotor1Store, useMotor2Store } from "../stores/store";
+import { Fieldset } from "./components/Fieldset";
+import { ManualDrive } from "./components/ManualDrive";
 
 export default function Monitoring() {
   return (
@@ -14,6 +12,7 @@ export default function Monitoring() {
       <MotorSpeed motor="01" store={useMotor1Store} />
       <MotorSpeed motor="02" store={useMotor2Store} />
       <IMUActiviation />
+      <ManualDrive motor="01" store={useMotor1Store} />
     </div>
   );
 }

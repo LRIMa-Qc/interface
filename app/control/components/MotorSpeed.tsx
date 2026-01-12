@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ChangeEvent } from "react";
+import {  useState, type ChangeEvent } from "react";
 import { doAction } from "@/app/actions/sdk";
 import { Fieldset } from "./Fieldset";
 import { DataWithHistory } from "@/app/stores/store";
@@ -54,7 +54,7 @@ export function MotorSpeed({
             min={-100}
             max={100}
             value={speed || 0}
-            onChange={(e) => handleMotorSpeedChange(e, motor)}
+            onChange={(e) => handleMotorSpeedChange(e)}
           />
           <span>100</span>
         </div>
@@ -68,7 +68,7 @@ export function MotorSpeed({
             min={-100}
             max={100}
             value={speed || 0}
-            onChange={(e) => handleMotorSpeedChange(e, motor)}
+            onChange={(e) => handleMotorSpeedChange(e)}
           />
         </div>
       </div>
