@@ -23,7 +23,7 @@ export function WebSocketComponent() {
   useEffect(() => {
     if (wsRef.current) return;
 
-    const ws = new WebSocket("ws://206.167.46.66:8001");
+    const ws = new WebSocket("wss://206.167.46.66:8001");
     wsRef.current = ws;
 
     ws.onopen = () => console.log("WS connected");
