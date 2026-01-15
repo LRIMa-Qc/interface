@@ -5,6 +5,7 @@ import {
   useAccelYStore,
   useAccelZStore,
   useGyroXStore,
+  useGyroYStore,
   useGyroZStore,
   useMotor1Store,
   useMotor2Store,
@@ -41,7 +42,7 @@ export default function Monitoring() {
         title="Acceleration (z)"
       />
       <RealTimeChart store={useGyroXStore} chartId="gyroX" title="Gyro (x)" />
-      <RealTimeChart store={useGyroZStore} chartId="gyroZ" title="Gyro (z)" />
+      <RealTimeChart store={useGyroYStore} chartId="gyroY" title="Gyro (y)" />
       <RealTimeChart store={useGyroZStore} chartId="gyroZ" title="Gyro (z)" />
       <CameraFeed />
     </div>

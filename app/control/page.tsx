@@ -3,8 +3,7 @@
 import { MotorSpeed } from "./components/MotorSpeed";
 import { IMUActiviation } from "./components/IMUActivation";
 import { useMotor1Store, useMotor2Store } from "../stores/store";
-import { Fieldset } from "./components/Fieldset";
-import { ManualDrive } from "./components/ManualDrive";
+import { Code } from "./components/Code";
 
 export default function Monitoring() {
   return (
@@ -12,7 +11,7 @@ export default function Monitoring() {
       <MotorSpeed motor="01" store={useMotor1Store} />
       <MotorSpeed motor="02" store={useMotor2Store} />
       <IMUActiviation />
-      <ManualDrive motor="01" store={useMotor1Store} />
+      <Code />
     </div>
   );
 }

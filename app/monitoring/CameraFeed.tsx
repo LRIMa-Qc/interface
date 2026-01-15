@@ -11,5 +11,7 @@ export default function CameraFeed() {
     return () => clearInterval(interval);
   }, []);
 
-  return <img src={url} className="w-full rounded-lg" alt="Robot view" />;
+  return (
+    <img src={url} className="w-full rounded-lg -scale-100" alt="Robot view" />
+  );
 }
